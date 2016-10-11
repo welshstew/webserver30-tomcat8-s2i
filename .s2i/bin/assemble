@@ -34,7 +34,7 @@ echo "grabbing the artifact $ARTIFACT_URL"
 
 mkdir $LOCAL_SOURCE_DIR/target
 curl -o "$LOCAL_SOURCE_DIR/target/$ARTIFACT_ARTIFACTID-$ARTIFACT_VERSION.$ARTIFACT_PACKAGING" "$ARTIFACT_URL"
-copy_artifacts
+copy_artifacts "target" war
 
 #mvn dependency:get -DgroupId="$ARTIFACT_GROUPID" -DartifactId="$ARTIFACT_ARTIFACTID" -Dversion="$ARTIFACT_VERSION" -DrepositoryUrl="$ARTIFACT_REPOSITORY" -Dpackaging="$ARTIFACT_PACKAGING" -Ddest="./target/"
 # # If a pom.xml is present, this is a normal build scenario
@@ -75,7 +75,7 @@ copy_artifacts
 # directory to the $DEPLOY_DIR directory for later deployment
 #copy_artifacts "deployments" war
 
-if [ -d $LOCAL_SOURCE_DIR/lib ]; then
-  echo "Copying libs from project..."
-  cp -v $LOCAL_SOURCE_DIR/lib/* $JWS_HOME/lib/
-fi
+# if [ -d $LOCAL_SOURCE_DIR/lib ]; then
+#   echo "Copying libs from project..."
+#   cp -v $LOCAL_SOURCE_DIR/lib/* $JWS_HOME/lib/
+# fi
