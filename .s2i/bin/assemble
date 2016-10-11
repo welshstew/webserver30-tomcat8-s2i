@@ -25,7 +25,7 @@ if [ -d $LOCAL_SOURCE_DIR/configuration ]; then
   cp -v $LOCAL_SOURCE_DIR/configuration/* $JWS_HOME/conf/
 fi
 
-#configure_proxy
+configure_proxy
 #configure_mirrors
 
 # manage_incremental_build
