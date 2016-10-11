@@ -119,8 +119,8 @@
     "name" : "IMAGESTREAM_OUTPUT",
     "value" : "ocp-simple-war-app"
   }, {
-    "name" : "ARTIFACT_REPOSITORY",
-    "value" : "http://10.1.2.4:8081/nexus/content/repositories/releases/"
+    "name" : "ARTIFACT_URL",
+    "value" : "http://10.1.2.4:8081/nexus/content/repositories/releases/com/example/ocp-simple-war-app/1.0.0/ocp-simple-war-app-1.0.0.war"
   }, {
     "name" : "REGISTRY",
     "value" : "172.30.177.25:5000"

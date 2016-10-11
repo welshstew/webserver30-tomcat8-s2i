@@ -25,13 +25,17 @@ if [ -d $LOCAL_SOURCE_DIR/configuration ]; then
   cp -v $LOCAL_SOURCE_DIR/configuration/* $JWS_HOME/conf/
 fi
 
-configure_proxy
-configure_mirrors
+#configure_proxy
+#configure_mirrors
 
 # manage_incremental_build
 
-echo "grabbing the artifact $ARTIFACT_GROUPID:$ARTIFACT_ARTIFACTID:$ARTIFACT_VERSION:$ARTIFACT_PACKAGING"
-mvn dependency:get -DgroupId="$ARTIFACT_GROUPID" -DartifactId="$ARTIFACT_ARTIFACTID" -Dversion="$ARTIFACT_VERSION" -DrepositoryUrl="$ARTIFACT_REPOSITORY" -Dpackaging="$ARTIFACT_PACKAGING" -Ddest="./target/"
+echo "grabbing the artifact $ARTIFACT_URL"
+
+mkdir target
+curl -o "./target/$ARTIFACT_ARTIFACTID-$ARTIFACT_VERSION.$ARTIFACT_PACKAGING" "$ARTIFACT_URL"
+
+#mvn dependency:get -DgroupId="$ARTIFACT_GROUPID" -DartifactId="$ARTIFACT_ARTIFACTID" -Dversion="$ARTIFACT_VERSION" -DrepositoryUrl="$ARTIFACT_REPOSITORY" -Dpackaging="$ARTIFACT_PACKAGING" -Ddest="./target/"
 # # If a pom.xml is present, this is a normal build scenario
 # # so run maven.
 # if [ -f "$LOCAL_SOURCE_DIR/pom.xml" ]; then
