@@ -27,7 +27,7 @@
         <repository>
           <id>nexus</id>
           <name>Local Nexus</name>
-          <url>http://10.1.2.4:8081/nexus/content/groups/public/</url>
+          <url>http://10.1.2.4:8081/nexus/content/repositories/releases/</url>
           <snapshots>
             <enabled>true</enabled>
           </snapshots>
