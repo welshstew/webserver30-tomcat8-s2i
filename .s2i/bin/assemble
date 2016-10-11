@@ -31,7 +31,7 @@ configure_mirrors
 # manage_incremental_build
 
 echo "grabbing the artifact $ARTIFACT_GROUPID:$ARTIFACT_ARTIFACTID:$ARTIFACT_VERSION:$ARTIFACT_PACKAGING"
-mvn dependency:get -DgroupId="$ARTIFACT_GROUPID" -DartifactId="$ARTIFACT_ARTIFACTID" -Dversion="$ARTIFACT_VERSION" -Dpackaging="$ARTIFACT_PACKAGING" -Ddest="target/"
+mvn dependency:get -DgroupId="$ARTIFACT_GROUPID" -DartifactId="$ARTIFACT_ARTIFACTID" -Dversion="$ARTIFACT_VERSION" -DrepositoryUrl="$ARTIFACT_REPOSITORY" -Dpackaging="$ARTIFACT_PACKAGING" -Ddest="target/"
 # # If a pom.xml is present, this is a normal build scenario
 # # so run maven.
 # if [ -f "$LOCAL_SOURCE_DIR/pom.xml" ]; then
