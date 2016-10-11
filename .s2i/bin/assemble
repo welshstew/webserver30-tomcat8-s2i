@@ -34,6 +34,7 @@ echo "grabbing the artifact $ARTIFACT_URL"
 
 mkdir target
 curl -o "./target/$ARTIFACT_ARTIFACTID-$ARTIFACT_VERSION.$ARTIFACT_PACKAGING" "$ARTIFACT_URL"
+copy_artifacts "$ARTIFACT_DIR" war
 
 #mvn dependency:get -DgroupId="$ARTIFACT_GROUPID" -DartifactId="$ARTIFACT_ARTIFACTID" -Dversion="$ARTIFACT_VERSION" -DrepositoryUrl="$ARTIFACT_REPOSITORY" -Dpackaging="$ARTIFACT_PACKAGING" -Ddest="./target/"
 # # If a pom.xml is present, this is a normal build scenario
