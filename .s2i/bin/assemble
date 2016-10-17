@@ -30,7 +30,6 @@ fi
 if [ -d $SRC_SCRIPTS ]; then
   echo "Copying executable scripts to launch area"
   cp -v $SRC_SCRIPTS/launch.sh /opt/webserver/bin/
-  chmod jboss +x /opt/webserver/bin/launch.sh
 fi
 
 configure_proxy
