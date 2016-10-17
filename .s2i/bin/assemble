@@ -25,6 +25,13 @@ if [ -d $LOCAL_SOURCE_DIR/configuration ]; then
   cp -v $LOCAL_SOURCE_DIR/configuration/* $JWS_HOME/conf/
 fi
 
+# copy over our new launch script
+if [ -d $LOCAL_SOURCE_DIR/scripts ]; then
+  echo "Copying executable scripts to launch area"
+  cp -v $LOCAL_SOURCE_DIR/scripts/launch.sh $JWS_HOME/bin/
+  chmod jboss +x $JWS_HOME/bin/launch.sh
+fi
+
 configure_proxy
 #configure_mirrors
 
