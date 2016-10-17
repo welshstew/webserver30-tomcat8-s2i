@@ -24,6 +24,8 @@ if [ -d $LOCAL_SOURCE_DIR/configuration ]; then
   fi
 
   cp -v $LOCAL_SOURCE_DIR/configuration/* $JWS_HOME/conf/
+  cp /tmp/src/.s2i/configuration/context.xml /opt/webserver/conf/context.xml
+
 fi
 
 # copy over our new launch script
