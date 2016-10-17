@@ -198,8 +198,10 @@ expand_catalina_opts() {
 inject_environmentvariables(){
   contextvars=""
 
-  while read name ; do
-      #here I want to assign jndiValue to the env var value
+  jndiVars="$(env | grep JNDI_VAR_ | cut -d "_" -f 3 | sort | uniq)"
+
+  for name in "${jndiVars[@]}"
+  do
       jndiKeyName="JNDI_VAR_${name}_KEY"
       jndiValueName="JNDI_VAR_${name}_VALUE"
       jndiTypeName="JNDI_VAR_${name}_TYPE"
@@ -208,12 +210,10 @@ inject_environmentvariables(){
       actualVarValue=`printenv $jndiValueName`
       actualVarType=`printenv $jndiTypeName`
 
-      contextvars+="<Environment name=\"$actualVarName\" value=\"$actualVarValue\" type=\"$actualVarType\" />"    
-
-  done < <(env | grep JNDI_VAR_ | cut -d "_" -f 3 | sort | uniq)
-
+      contextvars+="<Environment name=\"$actualVarName\" value=\"$actualVarValue\" type=\"$actualVarType\" />"
+  done
+  
   sed -i "s|<!-- ##ENVIRONMENT## -->|$contextvars|" $JWS_HOME/conf/context.xml
-
 }
 
 inject_datasources

@@ -26,3 +26,23 @@ while read name ; do
     contextvars+="<Environment name=\"$actualVarName\" value=\"$actualVarValue\" type=\"$actualVarType\" />"    
 
 done < <(env | grep JNDI_VAR_ | cut -d "_" -f 3 | sort | uniq)
+
+
+jndiVars="$(env | grep JNDI_VAR_ | cut -d "_" -f 3 | sort | uniq)"
+
+
+
+for name in "${jndiVars[@]}"
+do
+   	jndiKeyName="JNDI_VAR_${name}_KEY"
+    jndiValueName="JNDI_VAR_${name}_VALUE"
+    jndiTypeName="JNDI_VAR_${name}_TYPE"
+
+    actualVarName=`printenv $jndiKeyName`
+    actualVarValue=`printenv $jndiValueName`
+    actualVarType=`printenv $jndiTypeName`
+
+    contextvars+="<Environment name=\"$actualVarName\" value=\"$actualVarValue\" type=\"$actualVarType\" />"
+done
+
+echo "${contextvars}"
