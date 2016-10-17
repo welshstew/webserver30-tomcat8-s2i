@@ -123,7 +123,7 @@
     "value" : "http://10.1.2.4:8081/nexus/content/repositories/releases/com/example/ocp-simple-war-app/1.0.0/ocp-simple-war-app-1.0.0.war"
   }, {
     "name" : "REGISTRY",
-    "value" : "172.30.177.25:5000"
+    "value" : "172.30.24.70:5000"
   }, {
     "name" : "IS_PULL_NAMESPACE",
     "value" : "example"

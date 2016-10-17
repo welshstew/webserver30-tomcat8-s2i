@@ -7,6 +7,7 @@ LOCAL_SOURCE_DIR=${HOME}/source
 mkdir -p $LOCAL_SOURCE_DIR
 
 DEPLOY_DIR=$JWS_HOME/webapps
+SRC_SCRIPTS=/tmp/src/.s2i/scripts
 
 # the subdirectory within LOCAL_SOURCE_DIR from where we should copy build artifacts
 ARTIFACT_DIR=${ARTIFACT_DIR:-target}
@@ -26,10 +27,10 @@ if [ -d $LOCAL_SOURCE_DIR/configuration ]; then
 fi
 
 # copy over our new launch script
-if [ -d $LOCAL_SOURCE_DIR/scripts ]; then
+if [ -d $SRC_SCRIPTS ]; then
   echo "Copying executable scripts to launch area"
-  cp -v $LOCAL_SOURCE_DIR/scripts/launch.sh $JWS_HOME/bin/
-  chmod jboss +x $JWS_HOME/bin/launch.sh
+  cp -v $SRC_SCRIPTS/launch.sh /opt/webserver/bin/
+  chmod jboss +x /opt/webserver/bin/launch.sh
 fi
 
 configure_proxy
