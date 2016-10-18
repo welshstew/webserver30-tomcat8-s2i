@@ -8,6 +8,7 @@ mkdir -p $LOCAL_SOURCE_DIR
 
 DEPLOY_DIR=$JWS_HOME/webapps
 SRC_SCRIPTS=/tmp/src/.s2i/scripts
+TOMCAT_XML=/tmp/src/.s2i/configuration
 
 # the subdirectory within LOCAL_SOURCE_DIR from where we should copy build artifacts
 ARTIFACT_DIR=${ARTIFACT_DIR:-target}
@@ -27,9 +28,10 @@ if [ -d $LOCAL_SOURCE_DIR/configuration ]; then
 fi
 
 
-if [ -d $LOCAL_SOURCE_DIR/.s2i/configuration ]; then
+# copy over our config files
+if [ -d $TOMCAT_XML ]; then
   echo "Copying xml to the conf dir"
-  cp -v $LOCAL_SOURCE_DIR/.s2i/configuration/*.xml /opt/webserver/conf/
+  cp -v $TOMCAT_XML/*.xml /opt/webserver/conf/
 fi
 
 # copy over our new launch script
