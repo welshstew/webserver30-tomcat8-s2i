@@ -1,5 +1,1 @@
-ARTIFACT_GROUPID=com.redhat
-ARTIFACT_ARTIFACTID=sample-war
-ARTIFACT_VERSION=1.1
-ARTIFACT_PACKAGING=war
 ARTIFACT_URL=http://10.1.2.4:8081/nexus/content/repositories/releases/com/example/ocp-simple-war-app/1.0.0/ocp-simple-war-app-1.0.0.war

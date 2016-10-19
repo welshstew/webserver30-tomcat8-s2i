@@ -67,20 +67,8 @@
         "sourceStrategy" : {
           "env" : [ 
             {
-              "name" : "ARTIFACT_GROUPID",
-              "value" : "${ARTIFACT_GROUPID}"
-            },
-            {
-              "name" : "ARTIFACT_ARTIFACTID",
-              "value" : "${ARTIFACT_ARTIFACTID}"
-            },
-            {
-              "name" : "ARTIFACT_VERSION",
-              "value" : "${ARTIFACT_VERSION}"
-            },
-            {
-              "name" : "ARTIFACT_PACKAGING",
-              "value" : "${ARTIFACT_PACKAGING}"
+              "name" : "ARTIFACT_URL",
+              "value" : "${ARTIFACT_URL}"
             }
         ],
           "from" : {
@@ -104,18 +92,6 @@
     }
   } ],
   "parameters" : [ {
-    "name" : "ARTIFACT_GROUPID",
-    "value" : "com.example"
-  }, {
-    "name" : "ARTIFACT_ARTIFACTID",
-    "value" : "ocp-simple-war-app"
-  }, {
-    "name" : "ARTIFACT_VERSION",
-    "value" : "1.0.0"
-  }, {
-    "name" : "ARTIFACT_PACKAGING",
-    "value" : "war"
-  }, {
     "name" : "IMAGESTREAM_OUTPUT",
     "value" : "ocp-simple-war-app"
   }, {

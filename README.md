@@ -9,3 +9,10 @@ These have been taken from the registry.access.redhat.com/jboss-webserver-3/webs
 - /usr/local/s2i/assemble
 - /usr/local/s2i/run
 - /usr/local/s2i/save-artifacts
+
+## Binary Deployments
+
+See the [Binary Deployments Blog](https://blog.openshift.com/binary-deployments-openshift-3/)
+
+We use the environment variable ARTIFACT_URL to specify where the artifact should be curled from...
+
